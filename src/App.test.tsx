@@ -1,15 +1,21 @@
-import { render, screen } from "@testing-library/react";
-import App from "./App";
+import { render, screen } from '@testing-library/react';
+import App from './App';
 import { TEST_IDS } from "./constants/test-constants";
 
-describe("App", () => {
-  it("renders MainNavigation component", () => {
-    render(<App />);
-    expect(screen.getByTestId(TEST_IDS.mainNavigation)).toBeInTheDocument();
-  });
+test('renders main navigation menu', () => {
+  render(<App />);
+  const mainNavigationMenu = screen.getByTestId(TEST_IDS.mainNavigation);
+  expect(mainNavigationMenu).toBeInTheDocument();
+});
 
-  it("renders AppRoutes component", () => {
-    render(<App />);
-    expect(screen.getByTestId(TEST_IDS.appRoutes)).toBeInTheDocument();
-  });
+test('renders app routes', () => {
+  render(<App />);
+  const appRoutes = screen.getByTestId(TEST_IDS.appRoutes);
+  expect(appRoutes).toBeInTheDocument();
+});
+
+test('renders error boundary', () => {
+  render(<App />);
+  const errorBoundary = screen.getByTestId(TEST_IDS.errorBoundary);
+  expect(errorBoundary).toBeInTheDocument();
 });

@@ -1,5 +1,7 @@
 export const TEST_IDS = {
   appRoutes: "app-routes",
+  errorBoundary: "error-boundary",
+  fallbackRender: "fallback-render",
   mainNavigation: "main-navigation",
   navClose: "nav-close",
   navLink: "nav-link",

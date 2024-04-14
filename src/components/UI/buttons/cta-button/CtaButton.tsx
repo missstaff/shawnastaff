@@ -6,7 +6,7 @@ interface CtaButtonProps {
   children: React.ReactNode;
   disabled?: boolean;
   onClick?: () => void;
-  to: string;
+  to?: string;
 }
 
 /**
@@ -36,7 +36,7 @@ const CtaButton: React.FC<CtaButtonProps> = ({ children, disabled = false, onCli
       style={{ 
         cursor: disabled ? "not-allowed" : "pointer",
       }}
-      to={to}
+      to={to? to : ""}
       tabIndex={disabled ? -1 : 0}
     >
       {children}
