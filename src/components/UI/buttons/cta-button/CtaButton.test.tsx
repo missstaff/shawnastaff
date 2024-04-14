@@ -1,6 +1,7 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import CtaButton from "./CtaButton";
+import { act } from "react-dom/test-utils";
 
 describe("CtaButton", () => {
   it("should render the button with the correct text", () => {
@@ -24,7 +25,9 @@ describe("CtaButton", () => {
     );
 
     const button = screen.getByText("About");
-    button.click();
+    act(() => {
+      button.click();
+    });
 
     expect(mockOnClick).toHaveBeenCalled();
   });

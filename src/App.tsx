@@ -3,7 +3,6 @@ import { BrowserRouter as Router } from "react-router-dom";
 import MainNavigationMenu from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
 import AppRoutes from "./routes/app-routes/AppRoutes";
 import classes from "./App.module.css";
-import useColorScheme from "./hooks/useColorScheme";
 
 /**
  * The root component of the application.

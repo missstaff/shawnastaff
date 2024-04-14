@@ -1,8 +1,8 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
+import { act } from "react-dom/test-utils";
 import TextLogo from "./TextLogo";
 import { ROUTE_CONSTANTS } from "../../../../../routes/app-routes/route-constants";
-import { PAGES } from "../../../../../constants/app-constants";
 
 describe("TextLogo", () => {
   it("should render the logo with the correct link", () => {
@@ -27,7 +27,9 @@ describe("TextLogo", () => {
     const logoLink = screen.getByRole("link");
     expect(logoLink).toBeInTheDocument();
     expect(logoLink).toHaveAttribute("href", ROUTE_CONSTANTS.HOME);
-    logoLink.click();
+    act(() => {
+      logoLink.click();
+    });
     expect(window.location.pathname).toBe(ROUTE_CONSTANTS.HOME);
   });
 });

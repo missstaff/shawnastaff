@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import classes from "./CtaButton.module.css";
+import { ARIA_LABELS } from "../../../../constants/app-constants";
 
 interface CtaButtonProps {
   children: React.ReactNode;
@@ -19,8 +20,10 @@ interface CtaButtonProps {
 const CtaButton: React.FC<CtaButtonProps> = ({ children, onClick, to }) => {
   return (
     <NavLink
+      aria-label={`${ARIA_LABELS.navigateTo} ${children}`} 
       className={`${classes.link} ${classes.cta}`}
       onClick={onClick}
+      role="link"
       to={to}
     >
       {children}
