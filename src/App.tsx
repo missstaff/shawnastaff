@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
 import MainNavigationMenu from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
 import AppRoutes from "./routes/app-routes/AppRoutes";
