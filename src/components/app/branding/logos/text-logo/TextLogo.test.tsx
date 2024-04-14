@@ -16,4 +16,18 @@ describe("TextLogo", () => {
     expect(logoLink).toBeInTheDocument();
     expect(logoLink).toHaveAttribute("href", ROUTE_CONSTANTS.HOME);
   });
+
+  it("should navigate to the correct page when clicked", () => {
+    render(
+      <MemoryRouter>
+        <TextLogo>hello</TextLogo>
+      </MemoryRouter>
+    );
+
+    const logoLink = screen.getByRole("link");
+    expect(logoLink).toBeInTheDocument();
+    expect(logoLink).toHaveAttribute("href", ROUTE_CONSTANTS.HOME);
+    logoLink.click();
+    expect(window.location.pathname).toBe(ROUTE_CONSTANTS.HOME);
+  });
 });

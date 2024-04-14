@@ -1,8 +1,8 @@
 import { render, screen, fireEvent, act } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import MainNavigationMenu from "./MainNavigationMenu";
 import { TEST_IDS } from "../../../../constants/test-constants";
 import { PAGES } from "../../../../constants/app-constants";
-import { MemoryRouter } from "react-router-dom";
 import classes from "./MainNavigationMenu.module.css";
 
 describe("MainNavigationMenu", () => {
