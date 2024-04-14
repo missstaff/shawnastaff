@@ -29,6 +29,7 @@ const MainNavigationMenu: React.FC = () => {
 
         <div
           className={`${classes.navMenu} ${showMenu ? classes.showMenu : ""}`}
+          data-testid={TEST_IDS.showMenu}
         >
           <ul className={classes.navList} data-testid={TEST_IDS.appRoutes}>
             <li>
@@ -61,7 +62,7 @@ const MainNavigationMenu: React.FC = () => {
               </CtaButton>
             </li>
           </ul>
-          <div className={classes.navClose} onClick={toggleMenu}>
+          <div className={classes.navClose} data-testid={TEST_IDS.navToggle} onClick={toggleMenu}>
             <IoClose />
           </div>
         </div>

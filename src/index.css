@@ -13,6 +13,7 @@
   --color-white: hsl(0, 0%, 95%);
   --color-gray-light: hsl(0, 0%, 75%);
   --color-black: hsl(0, 0%, 6%);
+  --color-black-light: hsla(0, 0%, 6%, 0.2);
   --font-body: "Montserrat", sans-serif;
   --font-logo: "Dancing Script", cursive;
   --font-h2-size: 1.25rem;
