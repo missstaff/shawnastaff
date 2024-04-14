@@ -1,8 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router } from "react-router-dom";
-import MainNavigation from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
+import MainNavigationMenu from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
 import AppRoutes from "./routes/app-routes/AppRoutes";
-import "./App.css";
+import classes from "./App.module.css";
+import useColorScheme from "./hooks/useColorScheme";
 
 /**
  * The root component of the application.
@@ -11,8 +12,8 @@ import "./App.css";
 const App: React.FC = () => {
   return (
     <Router>
-      <MainNavigation />
-      <main className="main-content">
+      <MainNavigationMenu />
+      <main className={classes.mainContent}>
         <AppRoutes />
       </main>
     </Router>

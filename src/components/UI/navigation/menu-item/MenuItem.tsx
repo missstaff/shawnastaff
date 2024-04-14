@@ -9,7 +9,7 @@ interface MenuListItemProps {
 
 const MenuItem: React.FC<MenuListItemProps> = ({ children, onClick, to }) => {
     return (
-        <NavLink to={to} className={classes.navLink} onClick={onClick}>
+        <NavLink to={to} className={classes.navLink} onClick={onClick} role="link">
             {children}
         </NavLink>
     );

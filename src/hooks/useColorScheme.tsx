@@ -4,6 +4,10 @@ interface UseColorScheme {
   (): string;
 }
 
+/**
+ * Custom hook that detects the user's preferred color scheme and provides it as a state.
+ * @returns The current color scheme as a string.
+ */
 const useColorScheme: UseColorScheme = () => {
   const [colorScheme, setColorScheme] = useState<string>(
     getInitialColorScheme()

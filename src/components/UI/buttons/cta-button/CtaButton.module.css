@@ -1,26 +1,26 @@
 .cta {
     background-color: var(--color-primary);
-    color: var(--color-white);
     border: none;
     border-radius: 4px;
+    color: var(--color-white);
     cursor: pointer;
-    transition: background-color 0.3s ease;
     padding: 0.75rem 1.5rem;
+    transition: background-color 0.3s ease;
 }
 
 @media screen and (max-width: 300px) {
 
-    .link,
     .cta {
-        font-size: var(--smaller-font-size);
-    }
-
-    .cta {
-        padding: 8px 16px;
         font-size: 12px;
         margin-top: 1rem;
-        width: auto;
+        padding: 8px 16px;
         white-space: nowrap;
+        width: auto;
+    }
+
+    .cta,
+    .link {
+        font-size: var(--smaller-font-size);
     }
 }
 
@@ -31,5 +31,5 @@
 }
 
 .link:hover {
-    color: hsl(295, 80%, 30%);
+    color: var(--color-primary-dark);
 }

@@ -21,4 +21,3 @@ export const PAGES = {
   HOME: "Home",
   PROJECTS: "Projects",
 };
-

@@ -1,13 +1,12 @@
 import React, { useState } from "react";
-import { NavLink, Route } from "react-router-dom";
 import { IoClose, IoMenu } from "react-icons/io5";
-import "./MainNavigationMenu.css";
 import CtaButton from "../../buttons/cta-button/CtaButton";
 import { ROUTE_CONSTANTS } from "../../../../routes/app-routes/route-constants";
 import MenuItem from "../menu-item/MenuItem";
 import { NAME, PAGES } from "../../../../constants/app-constants";
 import TextLogo from "../../../app/branding/logos/text-logo/TextLogo";
 import classes from "./MainNavigationMenu.module.css";
+import { TEST_IDS } from "../../../../constants/test-constants";
 
 const MainNavigationMenu: React.FC = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -22,7 +21,7 @@ const MainNavigationMenu: React.FC = () => {
     }
   };
   return (
-    <header className={classes.header}>
+    <header className={classes.header} data-testid={TEST_IDS.mainNavigation}>
       <nav className={`${classes.nav} ${classes.container}`}>
         <TextLogo>
           {NAME}
@@ -30,9 +29,8 @@ const MainNavigationMenu: React.FC = () => {
 
         <div
           className={`${classes.navMenu} ${showMenu ? classes.showMenu : ""}`}
-          // id="nav-menu"
         >
-          <ul className={classes.navList}>
+          <ul className={classes.navList} data-testid={TEST_IDS.appRoutes}>
             <li>
               <MenuItem to={ROUTE_CONSTANTS.HOME} onClick={closeMenuOnMobile}>
                 {PAGES.HOME}
@@ -63,12 +61,12 @@ const MainNavigationMenu: React.FC = () => {
               </CtaButton>
             </li>
           </ul>
-          <div className={classes.navClose} id="nav-close" onClick={toggleMenu}>
+          <div className={classes.navClose} onClick={toggleMenu}>
             <IoClose />
           </div>
         </div>
 
-        <div className={classes.navToggle} id="nav-toggle" onClick={toggleMenu}>
+        <div className={classes.navToggle} onClick={toggleMenu}>
           <IoMenu />
         </div>
       </nav>

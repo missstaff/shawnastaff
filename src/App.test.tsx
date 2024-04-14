@@ -10,6 +10,6 @@ describe("App", () => {
 
     it("renders AppRoutes component", () => {
         render(<App />);
-        expect(screen.getByTestId("app-routes")).toBeInTheDocument();
+        expect(screen.getByTestId(TEST_IDS.appRoutes)).toBeInTheDocument();
     });
 });
