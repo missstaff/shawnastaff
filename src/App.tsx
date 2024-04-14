@@ -1,26 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router } from "react-router-dom";
+import MainNavigationMenu from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
+import AppRoutes from "./routes/app-routes/AppRoutes";
+import classes from "./App.module.css";
 
-function App() {
+/**
+ * The root component of the application.
+ * It renders the main navigation and the main content of the app.
+ */
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <MainNavigationMenu />
+      <main className={classes.mainContent}>
+        <AppRoutes />
+      </main>
+    </Router>
   );
-}
+};
 
 export default App;
