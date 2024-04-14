@@ -6,58 +6,80 @@ import { PAGES } from "../../../../constants/app-constants";
 import classes from "./MainNavigationMenu.module.css";
 
 describe("MainNavigationMenu", () => {
-    it("should render the main navigation menu", () => {
-        render(<MemoryRouter><MainNavigationMenu /></MemoryRouter>);
+  it("should render the main navigation menu", () => {
+    render(
+      <MemoryRouter>
+        <MainNavigationMenu />
+      </MemoryRouter>
+    );
 
-        expect(screen.getByTestId(TEST_IDS.mainNavigation)).toBeInTheDocument();
+    expect(screen.getByTestId(TEST_IDS.mainNavigation)).toBeInTheDocument();
+  });
+
+  it("should toggle the menu when the toggle button is clicked", () => {
+    render(
+      <MemoryRouter>
+        <MainNavigationMenu />
+      </MemoryRouter>
+    );
+
+    const toggleButton = screen.getByTestId(TEST_IDS.navToggle);
+    act(() => {
+      fireEvent.click(toggleButton);
     });
 
-    it("should toggle the menu when the toggle button is clicked", () => {
-        render(<MemoryRouter><MainNavigationMenu /></MemoryRouter>);
+    expect(screen.getByTestId(TEST_IDS.showMenu)).toHaveClass(classes.showMenu);
 
-        const toggleButton = screen.getByTestId(TEST_IDS.navToggle);
-        act(() => {
-            fireEvent.click(toggleButton);
-        });
-
-        expect(screen.getByTestId(TEST_IDS.showMenu)).toHaveClass(classes.showMenu);
-
-        act(() => {
-            fireEvent.click(toggleButton);
-        });
-
-        expect(screen.getByTestId(TEST_IDS.showMenu)).not.toHaveClass(classes.showMenu);
+    act(() => {
+      fireEvent.click(toggleButton);
     });
 
-    it("should close the menu on mobile when a menu item is clicked", () => {
-        render(<MemoryRouter><MainNavigationMenu /></MemoryRouter>);
+    expect(screen.getByTestId(TEST_IDS.showMenu)).not.toHaveClass(
+      classes.showMenu
+    );
+  });
 
-        const menuItem = screen.getByText(PAGES.HOME);
-        const toggleButton = screen.getByTestId(TEST_IDS.navToggle);
+  it("should close the menu on mobile when a menu item is clicked", () => {
+    render(
+      <MemoryRouter>
+        <MainNavigationMenu />
+      </MemoryRouter>
+    );
 
-        act(() => {
-            fireEvent.click(toggleButton);
-        });
-        act(() => {
-            fireEvent.click(toggleButton);
-        });
+    const menuItem = screen.getByText(PAGES.HOME);
+    const toggleButton = screen.getByTestId(TEST_IDS.navToggle);
 
-        expect(screen.getByTestId(TEST_IDS.showMenu)).not.toHaveClass(classes.showMenu);
+    act(() => {
+      fireEvent.click(toggleButton);
+    });
+    act(() => {
+      fireEvent.click(toggleButton);
     });
 
-    it("should navigate to the correct page when a menu item is clicked", () => {
-        render(<MemoryRouter><MainNavigationMenu /></MemoryRouter>);
+    expect(screen.getByTestId(TEST_IDS.showMenu)).not.toHaveClass(
+      classes.showMenu
+    );
+  });
 
-        const menuItem = screen.getByText(PAGES.HOME);
-        const toggleButton = screen.getByTestId(TEST_IDS.navToggle);
+  it("should navigate to the correct page when a menu item is clicked", () => {
+    render(
+      <MemoryRouter>
+        <MainNavigationMenu />
+      </MemoryRouter>
+    );
 
-        act(() => {
-            fireEvent.click(toggleButton);
-        });
-        act(() => {
-            fireEvent.click(menuItem);
-        });
+    const menuItem = screen.getByText(PAGES.HOME);
+    const toggleButton = screen.getByTestId(TEST_IDS.navToggle);
 
-        expect(screen.getByTestId(TEST_IDS.navTo + "-" + PAGES.HOME)).toBeInTheDocument();
+    act(() => {
+      fireEvent.click(toggleButton);
     });
+    act(() => {
+      fireEvent.click(menuItem);
+    });
+
+    expect(
+      screen.getByTestId(TEST_IDS.navTo + "-" + PAGES.HOME)
+    ).toBeInTheDocument();
+  });
 });

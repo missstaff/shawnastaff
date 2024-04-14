@@ -1,6 +1,5 @@
-import { render, screen } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
-import { act } from "react-dom/test-utils";
 import TextLogo from "./TextLogo";
 import { ROUTE_CONSTANTS } from "../../../../../routes/app-routes/route-constants";
 
