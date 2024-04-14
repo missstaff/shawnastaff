@@ -14,7 +14,13 @@ interface TextLogoProps {
  */
 const TextLogo: React.FC<TextLogoProps> = () => {
   return (
-    <NavLink aria-label={`${ARIA_LABELS.navigateToHome}`} className={classes.navLogo} role="link" to={ROUTE_CONSTANTS.HOME}>
+    <NavLink
+      aria-label={`${ARIA_LABELS.navigateToHome}`}
+      className={classes.navLogo}
+      role="link"
+      tabIndex={0}
+      to={ROUTE_CONSTANTS.HOME}
+    >
       {NAME}
     </NavLink>
   );

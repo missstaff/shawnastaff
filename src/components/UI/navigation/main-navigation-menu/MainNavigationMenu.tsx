@@ -3,8 +3,8 @@ import { IoClose, IoMenu } from "react-icons/io5";
 import CtaButton from "../../buttons/cta-button/CtaButton";
 import MenuItem from "../menu-item/MenuItem";
 import TextLogo from "../../../app/branding/logos/text-logo/TextLogo";
-import { ROUTE_CONSTANTS } from "../../../../routes/app-routes/route-constants";
 import { ARIA_LABELS, NAME, PAGES } from "../../../../constants/app-constants";
+import { ROUTE_CONSTANTS } from "../../../../routes/app-routes/route-constants";
 import { TEST_IDS } from "../../../../constants/test-constants";
 import classes from "./MainNavigationMenu.module.css";
 

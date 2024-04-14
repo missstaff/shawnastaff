@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import classes from "./CtaButton.module.css";
 import { ARIA_LABELS } from "../../../../constants/app-constants";
+import classes from "./CtaButton.module.css";
 
 interface CtaButtonProps {
   children: React.ReactNode;
@@ -36,8 +36,8 @@ const CtaButton: React.FC<CtaButtonProps> = ({ children, disabled = false, onCli
       style={{ 
         cursor: disabled ? "not-allowed" : "pointer",
       }}
-      to={to? to : ""}
       tabIndex={disabled ? -1 : 0}
+      to={to? to : ""}
     >
       {children}
     </NavLink>
