@@ -1,0 +1,35 @@
+.cta {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    padding: 0.75rem 1.5rem;
+}
+
+@media screen and (max-width: 300px) {
+
+    .link,
+    .cta {
+        font-size: var(--smaller-font-size);
+    }
+
+    .cta {
+        padding: 8px 16px;
+        font-size: 12px;
+        margin-top: 1rem;
+        width: auto;
+        white-space: nowrap;
+    }
+}
+
+.link {
+    color: var(--color-white);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+}
+
+.link:hover {
+    color: hsl(295, 80%, 30%);
+}

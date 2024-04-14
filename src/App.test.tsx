@@ -1,9 +1,15 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import { render, screen } from "@testing-library/react";
+import App from "./App";
+import { TEST_IDS } from "./constants/test-constants";
 
-test('renders learn react link', () => {
-  render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+describe("App", () => {
+    it("renders MainNavigation component", () => {
+        render(<App />);
+        expect(screen.getByTestId(TEST_IDS.mainNavigation)).toBeInTheDocument();
+    });
+
+    it("renders AppRoutes component", () => {
+        render(<App />);
+        expect(screen.getByTestId("app-routes")).toBeInTheDocument();
+    });
 });

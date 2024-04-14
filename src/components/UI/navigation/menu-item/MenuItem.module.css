@@ -1,0 +1,10 @@
+.navLink {
+    color: var(--color-white);
+    font-size: var(--smaller-font-size);
+    font-weight: var(--font-semi-bold);
+    transition: color 0.4s;
+}
+
+.navLink:hover {
+    color: var(--color-primary-dark);
+}

@@ -1,0 +1,6 @@
+.navLogo {
+    color: var(--color-primary);
+    font-size: var(--font-h2-size);
+    font-family: var(--font-logo);
+    transition: color 0.4s;
+}

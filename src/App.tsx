@@ -1,27 +1,22 @@
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import MainNavigation from "./components/UI/Navigation/MainNavigationMenu/MainNavigationMenu";
-import Home from "./pages/home/Home";
-import About from "./pages/about/About";
-import Contact from "./pages/contact/Contact";
-import Projects from "./pages/projects/Projects";
+import { BrowserRouter as Router } from "react-router-dom";
+import MainNavigation from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
+import AppRoutes from "./routes/app-routes/AppRoutes";
 import "./App.css";
 
-const App: React.FC  = () => {
- return (
-   <Router>
-     <MainNavigation />
-     <main className="main-content">
-       <Routes>
-         <Route path="/" element={<Home />} />
-         <Route path="/about" element={<About />} />
-         <Route path="/contact" element={<Contact />} />
-         <Route path="/projects" element={<Projects />} />
-         {/* Define other routes that you need*/}
-       </Routes>
-     </main>
-   </Router>
- );
+/**
+ * The root component of the application.
+ * It renders the main navigation and the main content of the app.
+ */
+const App: React.FC = () => {
+  return (
+    <Router>
+      <MainNavigation />
+      <main className="main-content">
+        <AppRoutes />
+      </main>
+    </Router>
+  );
 };
 
 export default App;

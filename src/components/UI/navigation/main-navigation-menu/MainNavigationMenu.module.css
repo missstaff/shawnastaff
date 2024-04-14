@@ -15,33 +15,18 @@
     height: var(--header-height);
     margin: 1rem;
   }
+
   
-  .nav__logo {
-    color: var(--first-color);
-    transition: color 0.4s;
-    font-size: var(--h2-font-size);
-    font-family: var(--second-font);
-  }
-  
-  .nav__toggle,
-  .nav__close {
+  .navToggle,
+  .navClose {
     font-size: 1.5rem;
     color: var(--title-color);
     cursor: pointer;
   }
-  
-  .nav__cta {
-    background-color: var(--first-color);
-    color: var(--title-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    padding: 0.75rem 1.5rem;
-  }
+
   
   @media screen and (max-width: 1150px) {
-    .nav__menu {
+    .navMenu {
       position: fixed;
       top: 0;
       right: -100%;
@@ -55,60 +40,38 @@
     }
   }
   @media screen and (max-width: 300px) {
-    .nav__menu {
+    .navMenu {
       padding: 4rem 1rem 2rem;
     }
   
-    .nav__list {
+    .navList {
       row-gap: 1rem;
-    }
-  
-    .nav__link,
-    .nav__cta {
-      font-size: var(--smaller-font-size);
-    }
-  
-    .nav__cta {
-      padding: 8px 16px;
-      font-size: 12px;
-      margin-top: 1rem;
-      width: auto;
-      white-space: nowrap;
     }
   }
   
-  .nav__list {
+  .navList {
     display: flex;
     flex-direction: column;
     row-gap: 2.5rem;
   }
   
-  .nav__link {
-    color: var(--title-color);
-    font-weight: var(--font-semi-bold);
-    transition: color 0.4s;
-  }
-  
-  .nav__link:hover {
-    color: var(--first-color);
-  }
-  
-  .nav__close {
+
+  .navClose {
     position: absolute;
     top: 1rem;
     right: 1.5rem;
   }
   
-  .show-menu {
+  .showMenu {
     right: 0;
   }
-  .nav__listt {
+  .navList {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     column-gap: 2.5rem;
   }
   
-  .nav__menu_mobile {
+  .navMenuMobile {
     position: fixed;
     top: 0;
     right: -100%;
@@ -124,12 +87,12 @@
     .nav {
       height: calc(var(--header-height) + 1rem);
     }
-    .nav__toggle,
-    .nav__close {
+    .navToggle,
+    .navClose {
       display: none;
     }
   
-    .nav__list {
+    .navList {
       flex-direction: row;
       column-gap: 2.5rem;
     }

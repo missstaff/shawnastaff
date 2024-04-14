@@ -1,4 +1,3 @@
-
 import React from "react";
 const Contact: React.FC = () => {
   return (
@@ -7,6 +6,6 @@ const Contact: React.FC = () => {
       <p>This is the contact page.</p>
     </div>
   );
-}
+};
 
 export default Contact;
