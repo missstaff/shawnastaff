@@ -1,4 +1,4 @@
-import { render, screen, fireEvent, act } from "@testing-library/react";
+import { act, fireEvent, render, screen  } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import MainNavigationMenu from "./MainNavigationMenu";
 import { PAGES } from "../../../../constants/app-constants";

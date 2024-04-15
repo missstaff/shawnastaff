@@ -1,4 +1,4 @@
-import { render, screen, act } from "@testing-library/react";
+import { act, render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import MenuItem from "./MenuItem";
 import { ROUTE_CONSTANTS } from "../../../../routes/app-routes/route-constants";

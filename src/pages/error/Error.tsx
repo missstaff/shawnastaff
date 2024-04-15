@@ -15,7 +15,7 @@ interface Error {
  * It is rendered when an error occurs in the application.
  */
 
-const Index: React.FC = () => {
+const Error: React.FC = () => {
   const error = useRouteError();
 
   let title = "An error occured.";
@@ -57,4 +57,4 @@ const Index: React.FC = () => {
   );
 };
 
-export default Index;
+export default Error;
