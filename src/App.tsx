@@ -1,9 +1,9 @@
 import React, { useState } from "react";
-import { BrowserRouter, BrowserRouter as Router } from "react-router-dom";
+import { BrowserRouter as Router } from "react-router-dom";
 import { ErrorBoundary } from "react-error-boundary";
-import MainNavigationMenu from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
 import AppRoutes from "./routes/app-routes/AppRoutes";
 import FallbackRender from "./components/app/errors/fallback-render/FallbackRender";
+import MainNavigationMenu from "./components/ui/navigation/main-navigation-menu/MainNavigationMenu";
 import { TEST_IDS } from "./constants/test-constants";
 import classes from "./App.module.css";
 

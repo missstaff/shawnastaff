@@ -1,45 +1,63 @@
 import { render, screen } from "@testing-library/react";
 import { MemoryRouter } from "react-router-dom";
 import AppRoutes from "./AppRoutes";
+import { ROUTE_CONSTANTS } from "./route-constants";
+
+// Mock lazy-loaded components
+jest.mock("../../pages/about/About", () => () => <div>About Page</div>);
+jest.mock("../../pages/contact/Contact", () => () => <div>Contact Page</div>);
+jest.mock("../../pages/error/Error", () => () => <div>Error Page</div>);
+jest.mock("../../pages/home/Home", () => () => <div>Home Page</div>);
+jest.mock("../../pages/projects/Projects", () => () => (
+  <div>Projects Page</div>
+));
+jest.mock("../../components/ui/loading-indicators/LoadingSpinner", () => () => (
+  <div>Loading Spinner</div>
+));
 
 describe("AppRoutes", () => {
-  it("should render the About page when the path is '/about'", () => {
+  it("renders About page", async () => {
     render(
-      <MemoryRouter initialEntries={["/about"]}>
+      <MemoryRouter initialEntries={[ROUTE_CONSTANTS.ABOUT]}>
         <AppRoutes />
       </MemoryRouter>
     );
-
-    expect(screen.getByText("About")).toBeInTheDocument();
+    expect(await screen.findByText("About Page")).toBeInTheDocument();
   });
 
-  it("should render the Contact page when the path is '/contact'", () => {
+  it("renders Contact page", async () => {
     render(
-      <MemoryRouter initialEntries={["/contact"]}>
+      <MemoryRouter initialEntries={[ROUTE_CONSTANTS.CONTACT]}>
         <AppRoutes />
       </MemoryRouter>
     );
-
-    expect(screen.getByText("Contact")).toBeInTheDocument();
+    expect(await screen.findByText("Contact Page")).toBeInTheDocument();
   });
 
-  it("should render the Projects page when the path is '/projects'", () => {
+  it("renders Projects page", async () => {
     render(
-      <MemoryRouter initialEntries={["/projects"]}>
+      <MemoryRouter initialEntries={[ROUTE_CONSTANTS.PROJECTS]}>
         <AppRoutes />
       </MemoryRouter>
     );
-
-    expect(screen.getByText("Projects")).toBeInTheDocument();
+    expect(await screen.findByText("Projects Page")).toBeInTheDocument();
   });
 
-  it("should render the Home page when the path is '/'", () => {
+  it("renders Home page", async () => {
     render(
-      <MemoryRouter initialEntries={["/"]}>
+      <MemoryRouter initialEntries={[ROUTE_CONSTANTS.HOME]}>
         <AppRoutes />
       </MemoryRouter>
     );
+    expect(await screen.findByText("Home Page")).toBeInTheDocument();
+  });
 
-    expect(screen.getByText("Home")).toBeInTheDocument();
+  it("renders Error page for unknown routes", async () => {
+    render(
+      <MemoryRouter initialEntries={["/unknown"]}>
+        <AppRoutes />
+      </MemoryRouter>
+    );
+    expect(await screen.findByText("Error Page")).toBeInTheDocument();
   });
 });
